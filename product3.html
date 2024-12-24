@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Букет пионов Эдем</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1 style="margin-left: 10px;">Эдем</h1>
+    <input type="text" placeholder="Поиск..." style="margin-left: 10px; width: 300px;">
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="about.html">О нас</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4; /* Цвет фона всей страницы */
+        margin: 0; /* Убираем отступы */
+        padding: 0; /* Убираем отступы */
+        text-align: justify;
+    }
+    .product-details {
+        padding: 20px; /* Убраны тени и закругления */
+    }
+    .product-row {
+        display: flex;
+        align-items: center;
+    }
+    .product-image {
+        margin-right: 20px;
+    }
+    button {
+        background-color: #184431;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 15px 30px; /* Увеличенный размер кнопки */
+        cursor: pointer;
+        font-size: 16px; /* Увеличенный шрифт */
+    }
+    button:hover {
+        background-color: #0e2a1c; /* Темный оттенок при наведении */
+    }
+    .form-popup {
+        display: none; /* Скрыто по умолчанию */
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        z-index: 1000;
+    }
+    .overlay {
+        display: none; /* Скрыто по умолчанию */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    input[type="text"],
+    input[type="tel"],
+    select {
+        width: 100%; /* Ширина в 100% */
+        padding: 10px; /* Внутренние отступы */
+        border: 2px solid black; /* Черная граница */
+        border-radius: 5px; /* Закругление углов */
+        margin-bottom: 10px; /* Отступ снизу */
+        box-sizing: border-box; /* Включаем границы и отступы в ширину */
+    }
+</style>
+</head>
+<body>
+<div class="product-details">
+    <div class="product-row">
+        <img src="peony.png" alt="Букет пионов" class="product-image" width="150">
+        <div class="product-info">
+            <h2>Букет пионов</h2>
+            <p>Цена: 115 600 руб.</p>
+            <p>Состав: пионы 51 шт., лента</p>
+            <p>Размер: высота-50 см., ширина-50 см.</p>
+            <button onclick="openForm('Чтобы купить букет, позвоните нам по телефону или заполните форму на сайте.');">Купить</button>
+        </div>
+    </div>
+</div>
+
+    <!-- Оверлей для затемнения фона -->
+    <div class="overlay" id="overlay" onclick="closeForm()"></div>
+    
+    <!-- Форма для заполнения -->
+    <div class="form-popup" id="formPopup">
+        <h3>Заполните форму для заказа</h3>
+        <form>
+            <label for="fullname">ФИО:</label><br>
+            <input type="text" id="fullname" name="fullname" required><br><br>
+            
+            <label for="address">Адрес:</label><br>
+            <input type="text" id="address" name="address" required><br><br>
+            
+            <label for="phone">Телефон:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+    
+            <label for="payment">Способ оплаты:</label><br>
+            <select id="payment" name="payment" required>
+                <option value="">Выберите способ оплаты</option>
+                <option value="card">Картой</option>
+                <option value="cash">Наличными</option>
+            </select><br><br>
+    
+            <button type="submit">Отправить</button>
+            <button type="button" onclick="closeForm()">Закрыть</button>
+        </form>
+    </div>
+    
+
+
+    <div class="additional-info" style="margin-left:10px; margin-right: 10px;">
+        <h3>Хранение и уход:</h3>
+        <p>Пионы — это великолепные цветы, известные своим пышным цветением и насыщенными ароматами. Чтобы ваш букет из пионов радовал вас как можно дольше, следуйте простым рекомендациям по уходу.
+
+            Первое, что нужно сделать после получения букета, — это подготовить цветы к размещению в вазе. Осмотрите пионы: выбирайте только те, у которых лепестки яркие и упругие, а стебли крепкие. Если вы заметили увядшие или поврежденные цветы, лучше выбрать другой букет.
+            
+            Перед тем как поставить пионы в вазу, обрежьте стебли под углом на 2-3 см. Это поможет цветам лучше впитывать воду и продлит их жизнь. Используйте острый нож или секатор, чтобы не повредить стебли.
+            
+            Выбирайте чистую вазу и наполняйте ее свежей водой комнатной температуры. Пионы предпочитают воду без добавления специальных растворов, но если у вас есть питательный раствор для срезанных цветов, его можно использовать. Меняйте воду каждые два дня и повторно обрезайте стебли для улучшения поглощения влаги.
+            
+            Размещайте букет в прохладном месте вдали от прямых солнечных лучей и сквозняков. Оптимальная температура для хранения пионов — 18-22°C. Избегайте соседства с фруктами, так как они выделяют этилен, который может ускорить увядание цветов.
+            
+            Регулярно осматривайте букет и удаляйте увядшие цветы и листья, чтобы предотвратить развитие бактерий в воде. Следуя этим простым рекомендациям, вы сможете наслаждаться красотой пионов на протяжении долгого времени.</p>
+
+        <h3>История цветов:</h3>
+        <p>Пионы (лат. Paeonia) имеют долгую и увлекательную историю, насчитывающую более двух тысяч лет. Эти цветы родом из Европы, Азии и Северной Америки и были известны еще в древних цивилизациях. В Древнем Китае пионы считались символом богатства и благополучия, а их цветение отмечалось как важное событие.
+
+            В Европе пионы начали культивироваться в садах в XVI-XVII веках. Они быстро завоевали популярность благодаря своим крупным, ярким цветам и насыщенному аромату. В викторианскую эпоху пионы стали символом романтической любви и использовались в свадебных букетах.
+            
+            С течением времени селекционеры вывели множество новых сортов пионов с разнообразными формами и оттенками. Сегодня эти цветы остаются одними из самых любимых для оформления свадеб, торжеств и праздников. Их пышные соцветия и утонченная красота делают пионы настоящей находкой для любого букета.
+            
+            Таким образом, пионы — это не только прекрасные цветы; они имеют глубокие культурные корни и значимость в различных традициях. Ухаживая за букетом из пионов, вы не только наслаждаетесь их красотой, но и становитесь частью их богатой истории.</p>
+
+    </div>
+    <script>
+        function openForm() {
+            document.getElementById("formPopup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+    
+        function closeForm() {
+            document.getElementById("formPopup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

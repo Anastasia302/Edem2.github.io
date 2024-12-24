@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Букет ромашек Эдем</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1 style="margin-left: 10px;">Эдем</h1>
+    <input type="text" placeholder="Поиск..." style="margin-left: 10px; width: 300px;">
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="about.html">О нас</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4; /* Цвет фона всей страницы */
+        margin: 0; /* Убираем отступы */
+        padding: 0; /* Убираем отступы */
+        text-align: justify;
+    }
+    .product-details {
+        padding: 20px; /* Убраны тени и закругления */
+    }
+    .product-row {
+        display: flex;
+        align-items: center;
+    }
+    .product-image {
+        margin-right: 20px;
+    }
+    button {
+        background-color: #184431;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 15px 30px; /* Увеличенный размер кнопки */
+        cursor: pointer;
+        font-size: 16px; /* Увеличенный шрифт */
+    }
+    button:hover {
+        background-color: #0e2a1c; /* Темный оттенок при наведении */
+    }
+    .form-popup {
+        display: none; /* Скрыто по умолчанию */
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        z-index: 1000;
+    }
+    .overlay {
+        display: none; /* Скрыто по умолчанию */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    input[type="text"],
+    input[type="tel"],
+    select {
+        width: 100%; /* Ширина в 100% */
+        padding: 10px; /* Внутренние отступы */
+        border: 2px solid black; /* Черная граница */
+        border-radius: 5px; /* Закругление углов */
+        margin-bottom: 10px; /* Отступ снизу */
+        box-sizing: border-box; /* Включаем границы и отступы в ширину */
+    }
+</style>
+</head>
+<body>
+<div class="product-details">
+    <div class="product-row">
+        <img src="daisies.png" alt="Букет ромашек" class="product-image" width="150">
+        <div class="product-info">
+            <h2>Букет ромашек</h2>
+            <p>Цена: 3 200 руб.</p>
+            <p>Состав: ромашки 35 шт., крафт, лента</p>
+            <p>Размер: высота-50 см., ширина-35 см.</p>
+            <button onclick="openForm('Чтобы купить букет, позвоните нам по телефону или заполните форму на сайте.');">Купить</button>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Оверлей для затемнения фона -->
+    <div class="overlay" id="overlay" onclick="closeForm()"></div>
+    
+    <!-- Форма для заполнения -->
+    <div class="form-popup" id="formPopup">
+        <h3>Заполните форму для заказа</h3>
+        <form>
+            <label for="fullname">ФИО:</label><br>
+            <input type="text" id="fullname" name="fullname" required><br><br>
+            
+            <label for="address">Адрес:</label><br>
+            <input type="text" id="address" name="address" required><br><br>
+            
+            <label for="phone">Телефон:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+    
+            <label for="payment">Способ оплаты:</label><br>
+            <select id="payment" name="payment" required>
+                <option value="">Выберите способ оплаты</option>
+                <option value="card">Картой</option>
+                <option value="cash">Наличными</option>
+            </select><br><br>
+    
+            <button type="submit">Отправить</button>
+            <button type="button" onclick="closeForm()">Закрыть</button>
+        </form>
+    </div>
+    
+
+
+
+    <div class="additional-info" style="margin-left:10px; margin-right: 10px;">
+        <h3>Хранение и уход:</h3>
+        <p>Ромашки — это символ простоты и невидимой красоты, которые приносят радость и свежесть в любой букет. Чтобы ваш букет из ромашек радовал вас как можно дольше, следуйте нескольким простым рекомендациям по уходу.
+
+            После получения букета важно правильно подготовить цветы к размещению в вазе. Осмотрите ромашки: выбирайте только те, у которых лепестки яркие и свежие, а стебли крепкие. Если вы заметили увядшие или поврежденные цветы, лучше удалить их из букета.
+            
+            Перед тем как поставить ромашки в вазу, обрежьте стебли под углом на 2-3 см. Это поможет цветам лучше впитывать воду и продлит их жизнь. Используйте острый нож или секатор, чтобы избежать повреждений.
+            
+            Выберите чистую вазу и наполните ее свежей водой комнатной температуры. Ромашки предпочитают простую воду без добавления специальных растворов, но если у вас есть питательный раствор для срезанных цветов, его можно использовать. Меняйте воду каждые два дня и повторно обрезайте стебли для улучшения поглощения влаги.
+            
+            Размещайте букет в прохладном месте вдали от прямых солнечных лучей и сквозняков. Оптимальная температура для хранения ромашек — 18-22°C. Избегайте соседства с фруктами, так как они выделяют этилен, который может ускорить увядание цветов.
+            
+            Регулярно осматривайте букет и удаляйте увядшие цветы и листья, чтобы предотвратить развитие бактерий в воде. Следуя этим простым рекомендациям, вы сможете наслаждаться красотой ромашек на протяжении долгого времени.</p>
+
+        <h3>История цветов:</h3>
+        <p>Ромашка (лат. Matricaria chamomilla) — это один из самых известных и любимых цветов, который имеет богатую историю и множество символических значений. Эти цветы произрастают в Европе, Азии и Северной Америке и известны с древних времён.
+
+            В античные времена ромашка была символом любви и преданности. Древние греки использовали ее в медицинских целях, считая, что она обладает целебными свойствами. Ромашка часто встречается в народной медицине, где ее применяют для лечения различных заболеваний, включая расстройства пищеварения и воспалительные процессы.
+            
+            В средние века ромашка стала популярной в Европе, где ее использовали не только как лекарственное растение, но и как декоративный цветок в садах. Она ассоциировалась с чистотой и невинностью, а также использовалась в свадебных букетаах как символ верности.
+            
+            С течением времени ромашка стала неотъемлемой частью многих культурных традиций. Она часто изображается в искусстве и литературе как символ весны и обновления. Сегодня ромашки остаются популярными как в садоводстве, так и в флористике благодаря своей простоте и очарованию.
+            
+            Таким образом, ромашка — это не только красивый цветок; она имеет глубокие культурные корни и значимость в различных традициях. Ухаживая за букетом из ромашек, вы не только наслаждаетесь их красотой, но и становитесь частью их богатой истории.</p>
+
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("formPopup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+    
+        function closeForm() {
+            document.getElementById("formPopup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

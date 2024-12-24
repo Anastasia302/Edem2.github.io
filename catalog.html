@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - Цветочный магазин Эдем</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1 style="margin-left: 10px;">Эдем</h1>
+    <input type="text" placeholder="Поиск..." style="margin-left: 10px; width: 300px;">
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li class="active"><a href="catalog.html">Каталог</a></li>
+            <li><a href="about.html">О нас</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="catalog">
+    <div class="section-container">
+        <div class="section left-section">
+            <h2 style="text-align: center;">Без повода</h2>
+            <div class="products-container">
+                <div class="product">
+                    <a href="product5.html">
+                        <div class="product-image">
+                            <img src="iris.png" alt="Ирисы">
+                        </div>
+                        <h3>Букет ирисов</h3>
+                        <span>2 725 руб.</span>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="product6.html">
+                        <div class="product-image">
+                            <img src="tulip2.png" alt="Тюльпаны">
+                        </div>
+                        <h3>Букет тюльпанов</h3>
+                        <span>2 240 руб.</span>
+                    </a>
+                </div>
+                <!-- Новая карточка для правой секции -->
+                <div class="product">
+                    <a href="product7.html">
+                        <div class="product-image">
+                            <img src="daisies2.png" alt="Хризантемы">
+                        </div>
+                        <h3>Букет хризантем</h3>
+                        <span>2 050 руб.</span>
+                    </a>
+                </div>
+                <!-- Добавляем еще одну карточку -->
+                <div class="product">
+                    <a href="product8.html">
+                        <div class="product-image">
+                            <img src="carnations.png" alt="Гвоздики">
+                        </div>
+                        <h3>Букет гвоздик</h3>
+                        <span>2 420 руб.</span>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="section right-section">
+            <h2 style="text-align: center;">По поводу</h2>
+            <div class="products-container">
+                <div class="product">
+                    <a href="product1.html">
+                        <div class="product-image">
+                            <img src="rose2.png" alt="Розы">
+                        </div>
+                        <h3>Букет роз</h3>
+                        <span>6 230 руб.</span>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="product2.html">
+                        <div class="product-image">
+                            <img src="tulip.png" alt="Тюльпаны">
+                        </div>
+                        <h3>Букет тюльпанов</h3>
+                        <span>7 500 руб.</span>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="product3.html">
+                        <div class="product-image">
+                            <img src="peony.png" alt="Пионы">
+                        </div>
+                        <h3>Букет пионов</h3>
+                        <span>115 600 руб.</span>
+                    </a>
+                </div>
+                <!-- Новая карточка для левой секции -->
+                <div class="product">
+                    <a href="product4.html">
+                        <div class="product-image">
+                            <img src="daisies.png" alt="Ромашки">
+                        </div>
+                        <h3>Букет ромашек</h3>
+                        <span>3 200 руб.</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <a href="still.html" class="more-button">Смотреть ещё</a>
+    </div>
+
+</section>
+
+<style>.section-container {
+    display: flex;
+}
+
+.left-section, .right-section {
+    width: 50%; /* Каждая секция занимает половину ширины */
+}
+
+.products-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product {
+    border: 2px solid #ccc; /* Рамка карточки товара */
+    border-radius: 15px; /* Закругленные углы */
+    padding: 10px;
+    margin: 5px; /* Уменьшили отступ */
+    width: 300px; /* Ширина карточки, чтобы было 4 в строке */
+    transition: transform 0.2s; /* Эффект при наведении */
+    height: auto; /* Убираем фиксированную высоту для лучшего размещения текста */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Устанавливаем направление по колонкам */
+}
+
+.product:hover {
+    transform: scale(1.05); /* Увеличение карточки при наведении */
+}
+
+.product-image {
+    width: 100%; /* Занимает всю ширину карточки */
+    height: auto; /* Высота автоматически подстраивается под изображение */
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Центрируем изображение */
+    align-items: center; /* Центрируем изображение */
+}
+
+.product img {
+    width: 100%; /* Занимает всю ширину контейнера изображения */
+    height: auto; /* Ограничиваем высоту изображения */
+    object-fit: cover; /* Чтобы изображение не искажалось и заполняло контейнер */
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column; /* Устанавливаем направление по колонкам */
+    align-items: stretch; /* Растягиваем текст по ширине карточки */
+    width: 100%; /* Занимает всю ширину карточки */
+}
+
+    </style>
+    
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

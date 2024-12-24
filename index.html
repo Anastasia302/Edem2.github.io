@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цветочный магазин Эдем</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 style="margin-left: 10px;">Эдем</h1>
+        <input type="text" placeholder="Поиск..." style="margin-left: 10px; width: 300px;">
+        <nav>
+            <ul>
+                <li><a class="active" href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="about.html">О нас</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="banner" style="width: 100%; height: 100%; overflow: hidden; margin-top: 5px; max-height: 700px;">
+        <img src="flowerss.jpg" alt="Цветы" style="width: 100%; height: auto; object-fit: cover;">
+    </div>
+    
+    <section id="best-sellers">
+        <h2 style="text-align: center;">Советуем</h2>
+        <div class="products-container">
+            <div class="product">
+                <a href="product1.html">
+                    <div class="product-image">
+                        <img src="rose2.png" alt="Розы">
+                    </div>
+                    <h3>Букет роз</h3>
+                    <span>6 230 руб.</span>
+                </a>
+            </div>
+            <div class="product">
+                <a href="product2.html">
+                    <div class="product-image">
+                        <img src="tulip.png" alt="Тюльпаны">
+                    </div>
+                    <h3>Букет тюльпанов</h3>
+                    <span>7 500 руб.</span>
+                </a>
+            </div>
+            <div class="product">
+                <a href="product3.html">
+                    <div class="product-image">
+                        <img src="peony.png" alt="Лилии">
+                    </div>
+                    <h3>Букет пионов</h3>
+                    <span>115 600 руб.</span>
+                </a>
+            </div>
+            <div class="product">
+                <a href="product4.html">
+                    <div class="product-image">
+                        <img src="daisies.png" alt="Подсолнухи">
+                    </div>
+                    <h3>Букет ромашек</h3>
+                    <span>3 200 руб.</span>
+                </a>
+            </div>
+        </div> 
+    </section>
+    
+    <style>
+        .products-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .product {
+            border: 2px solid #ccc; /* Рамка карточки товара */
+            border-radius: 15px; /* Закругленные углы */
+            padding: 10px;
+            margin: 5px; /* Уменьшили отступ */
+            width: calc(22% - 10px); /* Увеличили ширину карточки для размещения 4 в строке */
+            transition: transform 0.2s; /* Эффект при наведении */
+            height: 150px; /* Уменьшаем высоту карточки в 2 раза */
+            display: flex; /* Используем Flexbox для центрирования содержимого */
+            flex-direction: column; /* Располагаем элементы по вертикали */
+            justify-content: center; /* Центрируем по вертикали */
+            align-items: center; /* Центрируем по горизонтали */
+            text-align: center; /* Центрируем текст */
+        }
+    
+        .product a {
+            text-decoration: none; /* Убирает подчеркивание */
+            color: inherit; /* Наследует цвет от родительского элемента */
+        }
+    
+        .product a:hover {
+            color: inherit; /* Убедитесь, что цвет не меняется при наведении */
+        }
+        
+        .product:hover {
+            transform: scale(1.05); /* Увеличение карточки при наведении */
+        }
+    </style>
+    
+
+
+    <script src="script.js"></script>
+</body>
+</html>
